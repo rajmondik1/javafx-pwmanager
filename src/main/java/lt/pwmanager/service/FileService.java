@@ -113,61 +113,6 @@ public class FileService {
         }
     }
 
-//    public static void write() {
-//        File file = open();
-//        if (file.canRead() && file.canWrite()) {
-//            try {
-//
-//
-////                String contents = read(file);
-//                // TODO: Extract to converter utility
-////
-//
-//
-//                CredentialGroup credentialGroup = new CredentialGroup();
-//                Credentials credentials = new Credentials();
-//                credentials.setName("amazon pw");
-//                credentials.setEmail("asdfa@asdfas.ff");
-//                credentials.setPassword("asdfadfsf");
-//
-//                credentialGroup.setName("testinis goruaps");
-//                credentialGroup.addCredentials(credentials);
-//
-//                System.out.println(Arrays.toString(credentialGroup.getCredentials().toArray()));
-//                System.out.println(credentialGroup);
-//
-//                Gson g = new Gson();
-//
-//
-//                String c = g.toJson(credentialGroup);
-//
-//                System.out.println(c);
-//                System.out.println(file.getAbsolutePath());
-//
-//                FileWriter fw = new FileWriter(file);
-//                fw.write("abcd");
-//                fw.flush();
-//                fw.close();
-//
-//                System.out.println("WRITTEN");
-//
-//
-//            } catch (Exception e) {
-//                System.out.println(e.getMessage());
-//                System.out.println(e.getStackTrace());
-//                System.out.println("FUCK");
-//            }
-//        }
-//    }
-
-
-
-
-
-
-
-
-
     public String getFileName() {
         if (this.currentFile != null) {
             return this.currentFile.getName();

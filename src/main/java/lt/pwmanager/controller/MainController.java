@@ -102,6 +102,9 @@ public class MainController implements Initializable {
         FileService fileService = FileService.getInstance();
         fileService.newFile();
 
+        credentialsGroupListView.getItems().clear();
+        credentialsListView.getItems().clear();
+
         setTitle(fileService.getFileName());
     }
 
