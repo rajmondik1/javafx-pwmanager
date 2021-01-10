@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -32,12 +33,20 @@
         </MenuBar>
         <AnchorPane prefHeight="441.0" prefWidth="600.0">
             <children>
-                <Button fx:id="mygtukas" layoutX="458.0" layoutY="119.0" mnemonicParsing="false" text="Button" />
-                <ListView fx:id="credentialsGroupListView" layoutX="12.0" layoutY="7.0" onMouseClicked="#credentialGroupSelected" prefHeight="351.0" prefWidth="173.0" />
-                <PasswordField fx:id="passwordInput" layoutX="409.0" layoutY="238.0" />
-                <ListView fx:id="credentialsListView" layoutX="205.0" layoutY="9.0" onMouseClicked="#credentialSelected" prefHeight="351.0" prefWidth="173.0" />
-                <TextField fx:id="emailInput" layoutX="409.0" layoutY="188.0" />
+                <ListView fx:id="credentialsGroupListView" layoutX="12.0" layoutY="7.0" onMouseClicked="#credentialGroupSelected" prefHeight="317.0" prefWidth="173.0" />
+                <PasswordField fx:id="passwordInput" disable="true" layoutX="409.0" layoutY="238.0" onKeyReleased="#passwordTextChanged" />
+                <ListView fx:id="credentialsListView" layoutX="201.0" layoutY="7.0" onMouseClicked="#credentialSelected" prefHeight="317.0" prefWidth="173.0" />
+                <TextField fx:id="emailInput" disable="true" layoutX="409.0" layoutY="188.0" onKeyReleased="#emailTextChanged" />
                 <Text fx:id="credentialsName" layoutX="472.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Button fx:id="addGroupBtn" layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#onAddGroupBtnClick" text="+ Add Group" />
+            <Button fx:id="removeGroupBtn" layoutX="118.0" layoutY="336.0" mnemonicParsing="false" onAction="#onRemoveGroupBtnClick" text="- Remove" />
+            <Button fx:id="addCredentialBtn" layoutX="201.0" layoutY="336.0" mnemonicParsing="false" onAction="#onAddCredentialBtnClick" text="+ Add Entry" />
+            <Button fx:id="removeCredentialBtn" layoutX="307.0" layoutY="336.0" mnemonicParsing="false" onAction="#onRemoveCredentialButtonClick" text="- Remove" />
+            <Label layoutX="409.0" layoutY="166.0" text="Email" />
+            <Label layoutX="410.0" layoutY="221.0" text="Password" />
+            <Button fx:id="toggleShowPassword" layoutX="409.0" layoutY="271.0" mnemonicParsing="false" onAction="#onToggleShowPasswordClicked" text="Show" />
+            <Button fx:id="copyPassword" layoutX="468.0" layoutY="271.0" mnemonicParsing="false" onAction="#onCopyPasswordClicked" text="Copy" />
+            <TextField fx:id="passwordTextInput" layoutX="409.0" layoutY="238.0" visible="false" />
             </children>
         </AnchorPane>
     </children>

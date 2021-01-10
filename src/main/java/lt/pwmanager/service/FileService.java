@@ -83,15 +83,15 @@ public class FileService {
 
     public void writeToFile(List<CredentialGroup> credentialGroupList) {
         if (null == this.currentFile) {
-            return;
+            newFile();
         }
+        System.out.println(this.currentFile.getName());
         try {
             Gson g = new Gson();
             System.out.println("Saving to file");
             saveToFile(g.toJson(credentialGroupList));
         } catch (Exception e) {
             System.out.println(e.getMessage());
-//            throw new Exception();
         }
     }
 
@@ -104,17 +104,12 @@ public class FileService {
 
 
     private void saveToFile(String content) throws IOException {
-        if (!currentFile.canRead() || !currentFile.canWrite()) return;
-
         if (null != this.currentFile) {
-
             FileWriter fileWriter = new FileWriter(this.currentFile, false);
             fileWriter.write(content);
             fileWriter.flush();
             fileWriter.close();
             System.out.println("File written");
-        } else {
-            // new file creation thing
         }
     }
 
